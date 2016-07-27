@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>リンク先ページの指定位置にスクロールで移動</title>
+<style type="text/css">
+ @import "http://www.finefinefine.jp/wp/wp-content/themes/mystique/style.css";
+ @import "http://www.finefinefine.jp/date/2010/10/?mystique=css";
+#header-wrapper {
+  height: 60px;
+}
+#header {
+  height: 60px;
+}
+#site-title {
+  padding: 10px 0 0 0;
+}
+h5 {
+  margin-top: 20px;
+}
+#main {
+  clear: left;
+  margin: 20px auto;
+  padding: 5px 20px;
+  width: 800px;
+}
+h3 {
+  font-size: 20px;
+}
+#button {
+  margin: 50px auto 20px auto;
+  width: 200px;
+  padding: 10px;
+  border: solid 2px #ccc;
+  background: #eee;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+#sample {
+  margin: 10px auto 400px auto;
+  width: 800px;
+  padding: 20px;
+  border: solid 1px #ccc;
+}
+#sample div {
+  margin-bottom: 20px;
+  background: #eee;
+  height: 400px;
+  text-align: center;
+  line-height: 400px;
+  font-size: 30px;
+}
+
+</style>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", "1.4");</script>
+<script type="text/javascript">
+$(function() {
+	var n = window.location.href.slice(window.location.href.indexOf('?') + 4);
+	if(n.length < $("#sample div").size()) {
+		var p = $("#sample div").eq(n).offset().top;
+		$('html,body').animate({ scrollTop: p }, 'slow');
+		return false;
+	}
+});
+</script>
+</head>
+
+<body class="archive date col-2-right fixed loggedin browser-chrome">
+
+<div id="page">
+
+<div class="page-content header-wrapper">
+
+<div id="header">
+
+<div id="site-title" class="clear-block">
+<div id="logo"><a href="http://www.finefinefine.jp"><img src="http://www.finefinefine.jp/wp/wp-content/uploads/F3.png" title="fine×3 |  jQueryのサンプルやtipsの紹介 
+" alt="fine×3 | jQueryやらhtml5,cssとか" /></a></div>        <p class="headline"> jQueryのサンプルやtipsの紹介 
+</p>
+</div><!--site-title-->
+
+</div><!--header-->
+
+</div><!--page-content-->
+
+<div id="main">
+
+<h5>リンク先ページの指定位置にスクロールで移動</h5>
+<div id="sample">
+
+<div>ブロックコンテンツ1</div>
+<div>ブロックコンテンツ2</div>
+<div>ブロックコンテンツ3</div>
+<div>ブロックコンテンツ4</div>
+<div>ブロックコンテンツ5</div>
+
+</div>
+
+</div><!--main-->
+
+</div><!--page-->
+
+</body>
+</html>
